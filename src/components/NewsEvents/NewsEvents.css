@@ -1,0 +1,175 @@
+.news-events {
+    padding: 30px 0;
+    /* Removed horizontal padding to allow full-width header */
+    background: transparent;
+    position: relative;
+}
+
+.news-events-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 30px;
+    /* Restored padding here */
+}
+
+.news-header-wrapper {
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(5px);
+    width: 100%;
+    margin-bottom: 40px;
+    border-bottom: 1px solid #cbd5e0;
+}
+
+.news-header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+    /* Aligns with the news grid container */
+}
+
+/* Updated news-header styles to remove background since wrapper has it */
+.news-header {
+    padding: 20px 0;
+    /* Remove horizontal padding as container handles it */
+    display: flex;
+    align-items: baseline;
+    gap: 20px;
+}
+
+.news-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #4a4a4a;
+    font-family: serif;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.news-subtitle {
+    color: #718096;
+    font-size: 0.9rem;
+}
+
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.news-card {
+    background: transparent;
+    border: 1px solid #cbd5e0;
+    background-color: #ebeef2;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.news-card-image {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+}
+
+.news-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.overlay-text {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    color: white;
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    z-index: 2;
+}
+
+.overlay-graphic {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 59, 122, 0.3) 100%);
+}
+
+.molecule-icon {
+    position: absolute;
+    bottom: 10px;
+    width: 60px;
+    height: 60px;
+}
+
+.news-card-content {
+    padding: 20px;
+    font-size: 0.85rem;
+    color: #5a7d9a;
+}
+
+.news-date {
+    color: #718096;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-size: 0.8rem;
+}
+
+.news-item-text {
+    margin-bottom: 15px;
+}
+
+.news-item-text p {
+    margin: 0 0 5px 0;
+    line-height: 1.4;
+}
+
+.highlight {
+    font-weight: 600;
+    color: #4a5568;
+}
+
+.go-to-top {
+    /* Positioned relative to flow after grid */
+    margin-top: 5px;
+    /* Reduced margin to bring it closer to the cards */
+    margin-left: auto;
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    font-size: 1rem;
+    /* Increased font size */
+    font-weight: bold;
+    color: #2d3748;
+}
+
+.arrow-icon {
+    width: 40px;
+    /* Increased icon size */
+    height: 40px;
+    margin-bottom: 5px;
+}
+
+@media (max-width: 968px) {
+    .news-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .news-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .news-header {
+        flex-direction: column;
+        gap: 10px;
+    }
+}

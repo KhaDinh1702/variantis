@@ -1,0 +1,245 @@
+.footer-stats {
+    position: relative;
+    padding: 60px 0;
+    overflow: hidden;
+    background: transparent;
+}
+
+.footer-stats-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    height: 600px;
+    /* Maintained height */
+}
+
+.stats-layout {
+    position: relative;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Stat Items Base */
+.stat-item {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    /* Space between icon and text */
+    animation: fadeIn 0.8s ease-out backwards;
+    z-index: 20;
+    /* Ensure stats are on top of the tree */
+}
+
+/* Image Styles */
+.stat-image {
+    width: 80px;
+    /* Reduced size to fit with text */
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+    transition: transform 0.3s ease;
+}
+
+.small-icon {
+    width: 90px;
+    /* Larger icon for top item as requested */
+}
+
+.stat-image:hover {
+    transform: scale(1.05);
+}
+
+/* Text Styles */
+.stat-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #4a4a4a;
+    /* Dark grey number */
+    line-height: 1;
+    font-family: serif;
+    /* Matching reference font style might be serif or stylized sans */
+}
+
+.stat-label {
+    font-size: 1rem;
+    color: #8899a6;
+    /* Lighter grey for label */
+    font-weight: 400;
+    white-space: nowrap;
+    /* Prevent wrapping */
+}
+
+/* Layout Variations */
+.centered {
+    flex-direction: column;
+    text-align: center;
+    gap: 5px;
+}
+
+.row-layout {
+    flex-direction: row;
+}
+
+.row-layout.reverse {
+    /* No need for row-reverse if we ordered DOM elements correctly,
+       but good for flexibility if needed.
+       Here we handle order in JSX, so this just ensures alignment */
+    justify-content: flex-end;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
+/* Center Logo */
+.tree-logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    /* Lower z-index for the tree */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    pointer-events: none;
+    /* Allow clicking through if needed */
+}
+
+.variantis-tree-image {
+    width: 380px;
+    /* Slightly reduced size */
+    height: auto;
+    opacity: 1;
+}
+
+/* Positioning */
+.stat-top {
+    top: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation-delay: 0.1s;
+}
+
+.stat-left {
+    top: 50%;
+    left: 10%;
+    /* Adjusted for wider item */
+    transform: translateY(-50%);
+    animation-delay: 0.2s;
+}
+
+.stat-right {
+    top: 50%;
+    right: 10%;
+    /* Adjusted for wider item */
+    transform: translateY(-50%);
+    animation-delay: 0.3s;
+}
+
+.stat-bottom-left {
+    bottom: 50px;
+    left: 18%;
+    animation-delay: 0.4s;
+}
+
+.stat-bottom-right {
+    bottom: 50px;
+    right: 18%;
+    animation-delay: 0.5s;
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Responsive */
+@media (max-width: 968px) {
+    .stats-layout {
+        flex-direction: column;
+        height: auto;
+        padding: 40px 0;
+        gap: 40px;
+    }
+
+    .stat-item,
+    .stat-top,
+    .stat-left,
+    .stat-right,
+    .stat-bottom-left,
+    .stat-bottom-right {
+        position: relative;
+        top: auto;
+        left: auto;
+        right: auto;
+        bottom: auto;
+        transform: none;
+        flex-direction: row;
+        /* Stack vertically on mobile or keep row? Row usually looks better for stats list */
+        justify-content: flex-start;
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .centered {
+        flex-direction: row;
+        text-align: left;
+    }
+
+    .row-layout.reverse {
+        flex-direction: row;
+        /* Reset reverse for consistent listing */
+    }
+
+    .text-right {
+        text-align: left;
+        /* Reset text align */
+        order: 1;
+        /* Ensure text comes after icon if we want consistent left-icon layout */
+    }
+
+    /* Reorder flex items for mobile consistency if desired -> Icon Left, Text Right */
+    .stat-item img {
+        order: 0;
+    }
+
+    .stat-item .stat-text {
+        order: 1;
+        text-align: left;
+    }
+
+    .variantis-tree-image {
+        width: 250px;
+        margin: 40px 0;
+        order: -1;
+        /* Show logo first or last? */
+    }
+
+    .tree-logo {
+        position: relative;
+        transform: none;
+        top: auto;
+        left: auto;
+    }
+}
