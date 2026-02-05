@@ -3,6 +3,8 @@ import Header from './components/Header';
 import Hero from './components/Hero';
 import ContentSection from './components/ContentSection';
 import FooterStats from './components/FooterStats';
+import NewsEvents from './components/NewsEvents';
+import PageFooter from './components/PageFooter';
 import './App.css';
 
 // Import the background image from assets
@@ -37,6 +39,9 @@ function App() {
       />
 
       <FooterStats />
+
+      <NewsEvents />
+      <PageFooter />
     </div>
   );
 }
