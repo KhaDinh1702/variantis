@@ -1,0 +1,259 @@
+.footer-stats {
+    position: relative;
+    padding: 100px 40px 80px;
+    background: linear-gradient(135deg, #f8fbfd 0%, #ffffff 100%);
+    overflow: hidden;
+}
+
+.footer-stats::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:
+        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><path d="M0,0 L1000,0 L1000,1000 L0,1000 Z" fill="none" stroke="rgba(184,212,232,0.15)" stroke-width="1"/><line x1="0" y1="0" x2="1000" y2="1000" stroke="rgba(184,212,232,0.08)" stroke-width="1"/><line x1="1000" y1="0" x2="0" y2="1000" stroke="rgba(184,212,232,0.08)" stroke-width="1"/></svg>');
+    background-size: 200px 200px;
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.footer-stats-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.stats-layout {
+    position: relative;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.stat-item {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    animation: fadeIn 0.8s ease-out backwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.stat-icon {
+    font-size: 3rem;
+    filter: grayscale(100%);
+    opacity: 0.7;
+}
+
+.stat-number {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #003b7a;
+    line-height: 1;
+}
+
+.stat-label {
+    font-size: 0.95rem;
+    color: #5a7d9a;
+    text-align: center;
+    max-width: 150px;
+    line-height: 1.4;
+}
+
+/* Position each stat around the tree */
+.stat-top {
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation-delay: 0.1s;
+}
+
+.stat-left {
+    top: 50%;
+    left: 8%;
+    transform: translateY(-50%);
+    animation-delay: 0.2s;
+}
+
+.stat-right {
+    top: 50%;
+    right: 8%;
+    transform: translateY(-50%);
+    animation-delay: 0.3s;
+}
+
+.stat-bottom-left {
+    bottom: 40px;
+    left: 18%;
+    animation-delay: 0.4s;
+}
+
+.stat-bottom-right {
+    bottom: 40px;
+    right: 18%;
+    animation-delay: 0.5s;
+}
+
+/* Tree Logo */
+.tree-logo {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    z-index: 2;
+    animation: fadeInScale 1s ease-out 0.6s backwards;
+}
+
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.tree-logo svg {
+    width: 200px;
+    height: 200px;
+    filter: drop-shadow(0 4px 12px rgba(0, 59, 122, 0.2));
+}
+
+.variantis-tree-image {
+    width: 250px;
+    height: auto;
+    filter: drop-shadow(0 4px 12px rgba(0, 59, 122, 0.2));
+}
+
+.variantis-label {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #003b7a;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* Responsive Design */
+@media (max-width: 968px) {
+    .footer-stats {
+        padding: 80px 20px 60px;
+    }
+
+    .stats-layout {
+        min-height: 600px;
+    }
+
+    .stat-icon {
+        font-size: 2.5rem;
+    }
+
+    .stat-number {
+        font-size: 2.5rem;
+    }
+
+    .stat-label {
+        font-size: 0.85rem;
+    }
+
+    .tree-logo svg {
+        width: 150px;
+        height: 150px;
+    }
+
+    .variantis-tree-image {
+        width: 200px;
+    }
+
+    .variantis-label {
+        font-size: 1.5rem;
+    }
+
+    .stat-left {
+        left: 2%;
+    }
+
+    .stat-right {
+        right: 2%;
+    }
+
+    .stat-bottom-left {
+        left: 10%;
+    }
+
+    .stat-bottom-right {
+        right: 10%;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-stats {
+        padding: 60px 20px 40px;
+    }
+
+    .stats-layout {
+        min-height: 700px;
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .stat-item {
+        position: relative !important;
+        top: auto !important;
+        left: auto !important;
+        right: auto !important;
+        bottom: auto !important;
+        transform: none !important;
+    }
+
+    .stat-icon {
+        font-size: 2rem;
+    }
+
+    .stat-number {
+        font-size: 2rem;
+    }
+
+    .tree-logo {
+        order: 3;
+    }
+
+    .stat-top {
+        order: 1;
+    }
+
+    .stat-left {
+        order: 2;
+    }
+
+    .stat-right {
+        order: 4;
+    }
+
+    .stat-bottom-left {
+        order: 5;
+    }
+
+    .stat-bottom-right {
+        order: 6;
+    }
+}

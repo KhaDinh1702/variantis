@@ -1,0 +1,49 @@
+.app {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f8fbfd 0%, #ffffff 50%, #f5f9fc 100%);
+  position: relative;
+  overflow-x: hidden;
+}
+
+.app::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image:
+    url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><path d="M0,300 Q250,200 500,300 T1000,300 L1000,0 L0,0 Z" fill="rgba(184,212,232,0.1)"/><path d="M0,700 Q250,600 500,700 T1000,700 L1000,1000 L0,1000 Z" fill="rgba(184,212,232,0.08)"/></svg>');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.target-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 0;
+  position: relative;
+  z-index: 10;
+}
+
+.target-icon svg {
+  filter: drop-shadow(0 4px 12px rgba(0, 59, 122, 0.2));
+  animation: targetPulse 3s ease-in-out infinite;
+}
+
+@keyframes targetPulse {
+
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(1.05);
+    opacity: 0.8;
+  }
+}
