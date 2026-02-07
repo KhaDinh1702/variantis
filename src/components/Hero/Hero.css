@@ -229,18 +229,18 @@
         height: 400px;
     }
 
-    .circular-nav {
-        right: 10px;
-        gap: 15px;
+    .circle-button {
+        width: 85px;
+        height: 85px;
     }
 
-    .circle-button {
-        width: 80px;
-        height: 80px;
+    .circle-outer {
+        width: 110px;
+        height: 110px;
     }
 
     .circle-title {
-        font-size: 0.75rem;
+        font-size: 0.7rem;
     }
 
     .circle-subtitle {

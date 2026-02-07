@@ -77,10 +77,11 @@
 }
 
 .bottom-decoration {
-    width: 100%;
+    width: 100vw;
     position: relative;
     overflow: hidden;
     line-height: 0;
+    margin-left: calc(-50vw + 50%);
 }
 
 .footer-image {
@@ -88,6 +89,7 @@
     height: auto;
     display: block;
     object-fit: cover;
+    min-height: 150px;
 }
 
 @media (max-width: 768px) {
@@ -102,7 +104,13 @@
     }
 
     .bottom-decoration {
-        height: 200px;
+        width: 100vw;
+        margin-left: calc(-50vw + 50%);
+        min-height: 180px;
+    }
+
+    .footer-image {
+        min-height: 180px;
     }
 
     .footer-tree-svg {
