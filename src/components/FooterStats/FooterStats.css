@@ -41,6 +41,8 @@
     object-fit: contain;
     filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
     transition: transform 0.3s ease;
+    align-self: center;
+    flex-shrink: 0;
 }
 
 .small-icon {
@@ -56,6 +58,8 @@
 .stat-text {
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
 }
 
 .stat-number {
@@ -176,11 +180,17 @@
 
 /* Responsive */
 @media (max-width: 968px) {
+    .footer-stats-container {
+        height: auto;
+    }
+
     .stats-layout {
         flex-direction: column;
+        min-height: auto;
         height: auto;
-        padding: 40px 0;
-        gap: 40px;
+        padding: 40px 20px;
+        gap: 50px;
+        align-items: center;
     }
 
     .stat-item,
@@ -196,10 +206,9 @@
         bottom: auto;
         transform: none;
         flex-direction: row;
-        /* Stack vertically on mobile or keep row? Row usually looks better for stats list */
-        justify-content: flex-start;
+        justify-content: center;
         width: 100%;
-        max-width: 300px;
+        max-width: 350px;
     }
 
     .centered {
@@ -209,17 +218,13 @@
 
     .row-layout.reverse {
         flex-direction: row;
-        /* Reset reverse for consistent listing */
     }
 
     .text-right {
         text-align: left;
-        /* Reset text align */
         order: 1;
-        /* Ensure text comes after icon if we want consistent left-icon layout */
     }
 
-    /* Reorder flex items for mobile consistency if desired -> Icon Left, Text Right */
     .stat-item img {
         order: 0;
     }
@@ -230,10 +235,8 @@
     }
 
     .variantis-tree-image {
-        width: 250px;
-        margin: 40px 0;
-        order: -1;
-        /* Show logo first or last? */
+        width: 280px;
+        margin: 30px 0;
     }
 
     .tree-logo {
@@ -241,5 +244,61 @@
         transform: none;
         top: auto;
         left: auto;
+    }
+}
+
+@media (max-width: 600px) {
+    .footer-stats {
+        padding: 40px 0;
+    }
+
+    .stats-layout {
+        padding: 30px 15px;
+        gap: 35px;
+    }
+
+    .stat-image {
+        width: 60px;
+    }
+
+    .small-icon {
+        width: 70px;
+    }
+
+    .stat-number {
+        font-size: 2rem;
+    }
+
+    .stat-label {
+        font-size: 0.9rem;
+        white-space: normal;
+    }
+
+    .variantis-tree-image {
+        width: 220px;
+        margin: 25px 0;
+    }
+
+    .stat-item {
+        max-width: 280px;
+        gap: 12px;
+    }
+}
+
+@media (max-width: 400px) {
+    .variantis-tree-image {
+        width: 180px;
+    }
+
+    .stat-number {
+        font-size: 1.8rem;
+    }
+
+    .stat-label {
+        font-size: 0.85rem;
+    }
+
+    .stat-image {
+        width: 55px;
     }
 }
