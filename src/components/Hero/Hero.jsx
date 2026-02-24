@@ -17,6 +17,16 @@ const Hero = () => {
             <div className="hero-overlay"></div>
 
             <div className="hero-content">
+                <div className="hero-text">
+                    <p className="hero-tagline">Where Nature Meets Scientific Precision</p>
+                    <h1 className="hero-title">Advanced Nutraceutical Formulation & Manufacturing</h1>
+                    <p className="hero-subheadline">We combine botanical expertise with scientific rigor to develop, formulate and manufacture high-quality nutraceutical solutions for global partners.</p>
+                    <p className="hero-supporting">From concept to commercialization, Variantis delivers controlled natural innovation — powered by research, regulatory excellence, and industrial performance.</p>
+                    <div className="hero-cta">
+                        <a href="#capabilities" className="cta-button cta-primary">Discover Our Capabilities</a>
+                        <a href="#contact" className="cta-button cta-secondary">Contact Our Experts</a>
+                    </div>
+                </div>
                 <div className="circular-nav">
                     {circles.map((circle, index) => (
                         <div
@@ -28,6 +38,7 @@ const Hero = () => {
                             }}
                             onMouseEnter={() => setActiveCircle(circle.id)}
                             onMouseLeave={() => setActiveCircle(null)}
+                            title={circle.fullTitle || `${circle.title} ${circle.subtitle}`}
                         >
                             <div className="circle-outer"></div>
                             <div className="circle-inner">

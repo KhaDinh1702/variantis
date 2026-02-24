@@ -46,6 +46,10 @@ const PageFooter = () => {
                 </div>
             </div>
 
+            <div className="footer-tagline">
+                <p>Variantis – Where Nature meets scientific precision.</p>
+            </div>
+
             <div className="bottom-decoration">
                 <img src={footerImage} alt="Variantis Footer" className="footer-image" />
             </div>

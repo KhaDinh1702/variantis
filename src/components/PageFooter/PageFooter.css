@@ -9,6 +9,21 @@
     width: 100%;
 }
 
+.footer-tagline {
+    background-color: #7a99b5;
+    padding: 20px 0;
+    text-align: center;
+    width: 100%;
+}
+
+.footer-tagline p {
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin: 0;
+    letter-spacing: 0.5px;
+}
+
 .legal-content {
     max-width: 1200px;
     margin: 0 auto;
@@ -101,6 +116,11 @@
     .legal-links {
         flex-wrap: wrap;
         justify-content: center;
+    }
+
+    .footer-tagline p {
+        font-size: 1rem;
+        padding: 0 20px;
     }
 
     .bottom-decoration {
